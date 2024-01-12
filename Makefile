@@ -6,7 +6,7 @@
 #    By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/18 14:46:32 by alnzohab          #+#    #+#              #
-#    Updated: 2023/12/29 16:14:32 by alnzohab         ###   ########.fr        #
+#    Updated: 2024/01/12 10:42:35 by alnzohab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ OBJS_DIR = objs
 
 SRCS = push_start.c \
 	do_sa.c \
+	do_ra.c \
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
 
