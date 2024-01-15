@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_start.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 14:46:19 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/01/12 10:42:00 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/01/13 19:02:32 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 
 	// Do parsing/protection error in loop?
 	stack->a = malloc_new_node(ft_atoi(av[1]));
-	if (!stack)
+	if (!stack->a)
 		return (NULL);
+	stack->b = NULL;
 	tmp = stack->a;
 	i = 2;
 	while (av[i] != NULL)
@@ -64,6 +65,9 @@ void	ft_test_print(t_stack *stack)
 	printf("---- MOVEMENT ----\n");
 	ra(stack);
 	sa(stack);
+	//pb(stack);
+	pa(stack);
+	//pb(stack);
 	printf("---- AFTER ----\n");
 	tmp = stack->a;
 	while (tmp != NULL)
@@ -79,6 +83,7 @@ int	main(int ac, char **av)
 	t_stack	*stack;
 
 	stack = (t_stack *)malloc(1 * sizeof(t_stack));
+	
 	if (ac < 2)
 	{ // nb argument
 		printf("Error: no argument given\n");
@@ -94,29 +99,3 @@ int	main(int ac, char **av)
 	// ft_test_print(stack_b);
 	return (0);
 }
-
-// int main()
-// {
-//     t_stack *stack = NULL;
-
-//     t_stack *head;
-//     t_stack *node2;
-//     t_stack *node3;
-
-//     head = malloc_new_node(10);
-//     node2 = malloc_new_node(11);
-//     node3 = malloc_new_node(12);
-
-//     head->next = node2;
-//     node2->next = node3;
-
-//     stack = head;
-//     while (stack != NULL)
-//     {
-//         printf("%d\n", stack->data);
-//         stack = stack->next;
-//     }
-//     ft_free_list(head);
-// }
-
-// fuck push_swap

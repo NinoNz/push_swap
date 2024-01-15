@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_sa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 16:07:43 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/01/12 10:42:59 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/01/12 20:48:45 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,4 @@ void	sb(t_stack *stack)
 	tmp->value = swap;
 	printf("sb\n");
 }  
-/*
-void sb(t_stack *stack_b) {
-    do_swap(stack);
-}
-*/
+
