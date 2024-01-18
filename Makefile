@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: user <user@student.42.fr>                  +#+  +:+       +#+         #
+#    By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/18 14:46:32 by alnzohab          #+#    #+#              #
-#    Updated: 2024/01/13 18:47:13 by user             ###   ########.fr        #
+#    Updated: 2024/01/17 10:32:33 by alnzohab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ OBJS_DIR = objs
 SRCS = push_start.c \
 	do_sa.c \
 	do_ra.c \
-	do_pa.c \
 	do_pb.c \
+	do_pa.c \
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
 

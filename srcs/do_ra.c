@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:04:10 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/01/12 10:42:24 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/01/17 10:01:48 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ra(t_stack *stack_t)
 	// Trouver le dernier élément de la pile.
 	last = stack_t->a;
 	while (last->next != NULL)
+	
 	{
 		last = last->next;
 	}

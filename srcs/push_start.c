@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_start.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 14:46:19 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/01/13 19:02:32 by user             ###   ########.fr       */
+/*   Updated: 2024/01/18 11:43:53 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,15 @@ void	ft_test_print(t_stack *stack)
 {
 	t_node	*tmp;
 
-	printf("---- BEFORE ----\n");
+	printf("---- BEFORE (A) ----\n");
 	tmp = stack->a;
+	while (tmp != NULL)
+	{
+		printf("%d\n", tmp->value);
+		tmp = tmp->next;
+	}
+	printf("---- BEFORE (B) ----\n");
+	tmp = stack->b;
 	while (tmp != NULL)
 	{
 		printf("%d\n", tmp->value);
@@ -65,11 +72,17 @@ void	ft_test_print(t_stack *stack)
 	printf("---- MOVEMENT ----\n");
 	ra(stack);
 	sa(stack);
-	//pb(stack);
-	pa(stack);
-	//pb(stack);
-	printf("---- AFTER ----\n");
+	pb(stack->a->value, stack);
+	pa(stack->b->value,stack);
+	printf("---- AFTER (A) ----\n");
 	tmp = stack->a;
+	while (tmp != NULL)
+	{
+		printf("%d\n", tmp->value);
+		tmp = tmp->next;
+	}
+	printf("---- AFTER (b) ----\n");
+	tmp = stack->b;
 	while (tmp != NULL)
 	{
 		printf("%d\n", tmp->value);

@@ -3,24 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   do_pa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 21:18:15 by user              #+#    #+#             */
-/*   Updated: 2024/01/13 19:00:32 by user             ###   ########.fr       */
+/*   Updated: 2024/01/18 11:43:17 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	pa(t_stack *stack)
+void delete_node_pa(t_stack *stack)
+{
+	t_node *tmp;
+	
+	tmp = stack->b;
+	stack->b = tmp->next;
+	free(tmp);
+}
+void	pa(int data, t_stack *stack)
 {
 	t_node	*tmp;
+	t_node *new_node;
 
-	if (stack->b == NULL)
-		return ;
 	tmp = stack->a;
-	stack->a = (t_node *) stack->b;
-	stack->a->next = tmp;
-	stack->b = NULL;
+	new_node = malloc_new_node(data);
+	new_node->next = tmp;
+	stack->a = new_node;
+	delete_node_pa(stack);
 	printf("pa\n");
 }
