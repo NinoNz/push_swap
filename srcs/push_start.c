@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 14:46:19 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/01/18 11:43:53 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/02/22 15:52:32 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,11 @@ void	ft_test_print(t_stack *stack)
 		tmp = tmp->next;
 	}
 	printf("---- MOVEMENT ----\n");
-	ra(stack);
-	sa(stack);
-	pb(stack->a->value, stack);
-	pa(stack->b->value,stack);
+	//ra(stack);
+	//sa(stack);
+	//pb(stack->a->value, stack);
+	//pa(stack->b->value,stack);
+	rra(stack);
 	printf("---- AFTER (A) ----\n");
 	tmp = stack->a;
 	while (tmp != NULL)
