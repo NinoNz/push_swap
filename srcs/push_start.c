@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 14:46:19 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/22 15:52:32 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/02/23 15:58:31 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,42 +53,42 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 
 void	ft_test_print(t_stack *stack)
 {
-	t_node	*tmp;
+	// t_node	*tmp;
 
-	printf("---- BEFORE (A) ----\n");
-	tmp = stack->a;
-	while (tmp != NULL)
-	{
-		printf("%d\n", tmp->value);
-		tmp = tmp->next;
-	}
-	printf("---- BEFORE (B) ----\n");
-	tmp = stack->b;
-	while (tmp != NULL)
-	{
-		printf("%d\n", tmp->value);
-		tmp = tmp->next;
-	}
-	printf("---- MOVEMENT ----\n");
-	//ra(stack);
-	//sa(stack);
-	//pb(stack->a->value, stack);
-	//pa(stack->b->value,stack);
+	// printf("---- BEFORE (A) ----\n");
+	// tmp = stack->a;
+	// while (tmp != NULL)
+	// {
+	// 	printf("%d\n", tmp->value);
+	// 	tmp = tmp->next;
+	// }
+	// printf("---- BEFORE (B) ----\n");
+	// tmp = stack->b;
+	// while (tmp != NULL)
+	// {
+	// 	printf("%d\n", tmp->value);
+	// 	tmp = tmp->next;
+	// }
+	// printf("---- MOVEMENT ----\n");
+	ra(stack);
+	sa(stack);
+	pb(stack->a->value, stack);
+	pa(stack->b->value,stack);
 	rra(stack);
-	printf("---- AFTER (A) ----\n");
-	tmp = stack->a;
-	while (tmp != NULL)
-	{
-		printf("%d\n", tmp->value);
-		tmp = tmp->next;
-	}
-	printf("---- AFTER (b) ----\n");
-	tmp = stack->b;
-	while (tmp != NULL)
-	{
-		printf("%d\n", tmp->value);
-		tmp = tmp->next;
-	}
+	// printf("---- AFTER (A) ----\n");
+	// tmp = stack->a;
+	// while (tmp != NULL)
+	// {
+	// 	printf("%d\n", tmp->value);
+	// 	tmp = tmp->next;
+	// }
+	// printf("---- AFTER (b) ----\n");
+	// tmp = stack->b;
+	// while (tmp != NULL)
+	// {
+	// 	printf("%d\n", tmp->value);
+	// 	tmp = tmp->next;
+	// }
 	// ft_free_list(stack->a);
 }
 
@@ -98,8 +98,8 @@ int	main(int ac, char **av)
 
 	stack = (t_stack *)malloc(1 * sizeof(t_stack));
 	
-	if (ac < 2)
-	{ // nb argument
+	if (ac < 2) // nb argument
+	{ 
 		printf("Error: no argument given\n");
 		return (1);
 	}
@@ -111,5 +111,6 @@ int	main(int ac, char **av)
 	}
 	ft_test_print(stack);
 	// ft_test_print(stack_b);
+	
 	return (0);
 }

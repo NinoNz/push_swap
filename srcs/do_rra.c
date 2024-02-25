@@ -27,5 +27,5 @@ void	rra(t_stack *stack_t)
     stack_t->a = last;   
     beforlast->next = NULL;
  
-    printf("raa\n");
+    printf("rra\n");
 }
