@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 14:46:19 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/23 15:58:31 by alnzohab         ###   ########.fr       */
+/*   Created: 2024/02/26 13:26:57 by alnzohab          #+#    #+#             */
+/*   Updated: 2024/02/26 14:38:37 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 #include <stdio.h>
@@ -53,43 +54,18 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 
 void	ft_test_print(t_stack *stack)
 {
-	// t_node	*tmp;
-
-	// printf("---- BEFORE (A) ----\n");
-	// tmp = stack->a;
-	// while (tmp != NULL)
-	// {
-	// 	printf("%d\n", tmp->value);
-	// 	tmp = tmp->next;
-	// }
-	// printf("---- BEFORE (B) ----\n");
-	// tmp = stack->b;
-	// while (tmp != NULL)
-	// {
-	// 	printf("%d\n", tmp->value);
-	// 	tmp = tmp->next;
-	// }
-	// printf("---- MOVEMENT ----\n");
 	ra(stack);
 	sa(stack);
 	pb(stack->a->value, stack);
 	pa(stack->b->value,stack);
 	rra(stack);
-	// printf("---- AFTER (A) ----\n");
-	// tmp = stack->a;
-	// while (tmp != NULL)
-	// {
-	// 	printf("%d\n", tmp->value);
-	// 	tmp = tmp->next;
-	// }
-	// printf("---- AFTER (b) ----\n");
-	// tmp = stack->b;
-	// while (tmp != NULL)
-	// {
-	// 	printf("%d\n", tmp->value);
-	// 	tmp = tmp->next;
-	// }
-	// ft_free_list(stack->a);
+}
+static void	stack_sort(t_stack *stack)
+{
+	if (nb_node(*stack) <= 5)
+		simple_sort(stack);
+	else
+		radix_sort(stack);
 }
 
 int	main(int ac, char **av)
@@ -109,8 +85,9 @@ int	main(int ac, char **av)
 		printf("Error in fill_stack");
 		return (1);
 	}
+	stack_sort(stack);
+	radix_sort(stack);
 	ft_test_print(stack);
-	// ft_test_print(stack_b);
 	
 	return (0);
 }
