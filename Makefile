@@ -6,7 +6,7 @@
 #    By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/18 14:46:32 by alnzohab          #+#    #+#              #
-#    Updated: 2024/02/22 15:53:15 by alnzohab         ###   ########.fr        #
+#    Updated: 2024/02/27 14:56:20 by alnzohab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,11 @@ SRCS = push_start.c \
 	do_sx.c \
 	do_rx.c \
 	do_px.c \
-	do_rra.c 
+	do_rra.c \
+	simple_sort.c \
+	sort_3.c \
+	nb_node.c \
+	radix.c 
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
 

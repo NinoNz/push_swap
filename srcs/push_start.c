@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 13:26:57 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/26 14:38:37 by alnzohab         ###   ########.fr       */
+/*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
+/*   Updated: 2024/02/27 16:06:51 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 
 #include "push_swap.h"
@@ -52,7 +53,7 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 	return (stack);
 }
 
-void	ft_test_print(t_stack *stack)
+/*void	ft_test_print(t_stack *stack)
 {
 	ra(stack);
 	sa(stack);
@@ -60,12 +61,13 @@ void	ft_test_print(t_stack *stack)
 	pa(stack->b->value,stack);
 	rra(stack);
 }
+*/
 static void	stack_sort(t_stack *stack)
 {
-	if (nb_node(*stack) <= 5)
+	if (nb_node(stack->a) <= 5)
 		simple_sort(stack);
-	else
-		radix_sort(stack);
+	//else
+	//	radix_sort(stack);
 }
 
 int	main(int ac, char **av)
@@ -86,8 +88,8 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	stack_sort(stack);
-	radix_sort(stack);
-	ft_test_print(stack);
+	//radix_sort(stack);
+	//ft_test_print(stack);
 	
 	return (0);
 }

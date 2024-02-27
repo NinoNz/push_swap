@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:17:11 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/26 15:29:56 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/02/27 16:29:24 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,14 @@ void simple_sort(t_stack *stack)
 {
 	int size;
 
-	if (is_sorted(stack->a) || nb_node(stack->a) == 0 
+	if (is_sorted(stack) || nb_node(stack->a) == 0 
 		|| nb_node(stack->a) == 1)
 		return ;
-	size = nb_node(*stack->a);
+	size = nb_node(stack->a);
 	if (size == 2)
-		sa(stack->a);
+		sa(stack);
 	else if (size == 3)
-		sort_3(stack->a);
-		
-		
-
+		sort_3(stack);
+	else if (size == 4 || size == 5)
+		sort_4_5(stack);
 }

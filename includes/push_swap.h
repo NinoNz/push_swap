@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 14:46:49 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/22 15:52:56 by alnzohab         ###   ########.fr       */
+/*   Created: 2024/02/27 16:07:10 by alnzohab          #+#    #+#             */
+/*   Updated: 2024/02/27 16:07:12 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -18,6 +19,7 @@
 
 typedef struct  s_node
 {
+    int index;
     int value;
     struct s_node *next;
 }   t_node;
@@ -36,7 +38,10 @@ void	pa(int data, t_stack *stack);
 void	pb(int data, t_stack *stack);
 void	rra(t_stack *stack_t);
 t_node	*malloc_new_node(int value);
-
+void simple_sort(t_stack *stack);
+int is_sorted(t_stack *stack);
+void sort_3(t_stack *stack);
+size_t nb_node(t_node *stack_node);
 
 
 #endif
