@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   found_pos.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 12:40:06 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/06 16:14:14 by alnzohab         ###   ########.fr       */
+/*   Created: 2024/03/05 17:05:30 by alnzohab          #+#    #+#             */
+/*   Updated: 2024/03/06 16:08:37 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	radix_sort(t_stack *stack)
+int found_pos(t_node *linklist, int value)
 {
+    t_node *head;
+    int pos;
     
+    head = linklist;
+    pos = 0;
+    
+    while(head->value != value)
+    {
+        head = head->next;
+        pos++;
+    }
+    return (pos);
 }

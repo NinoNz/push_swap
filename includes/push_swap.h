@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:07:10 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/27 16:07:12 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:06:50 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef struct  s_node
 {
     int index;
-    int value;
+    int value;   
     struct s_node *next;
 }   t_node;
 
@@ -32,7 +32,7 @@ typedef struct s_stack
 
 void sa(t_stack *stack_a);
 void sb(t_stack *stack_b);
-void ra(t_stack *stack_a);
+void ra(t_stack *stack);
 void ss(t_stack *stack);
 void	pa(int data, t_stack *stack);
 void	pb(int data, t_stack *stack);
@@ -42,8 +42,8 @@ void simple_sort(t_stack *stack);
 int is_sorted(t_stack *stack);
 void sort_3(t_stack *stack);
 size_t nb_node(t_node *stack_node);
-
+void	sort_4_5(t_stack *stack);
+int found_pos(t_node *linklist, int value);
+int found_min(t_node *linklist);
 
 #endif
-
-

@@ -6,16 +6,15 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:17:11 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/27 16:29:24 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:12:33 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
-
-	t_node *head;
+	t_node	*head;
 
 	head = stack->a;
 	while (head && head->next)
@@ -27,12 +26,11 @@ int is_sorted(t_stack *stack)
 	return (1);
 }
 
-void simple_sort(t_stack *stack)
+void	simple_sort(t_stack *stack)
 {
-	int size;
+	size_t size;
 
-	if (is_sorted(stack) || nb_node(stack->a) == 0 
-		|| nb_node(stack->a) == 1)
+	if (is_sorted(stack) || nb_node(stack->a) == 0 || nb_node(stack->a) == 1)
 		return ;
 	size = nb_node(stack->a);
 	if (size == 2)

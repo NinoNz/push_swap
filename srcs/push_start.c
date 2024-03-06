@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/27 16:06:51 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:11:50 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_node	*malloc_new_node(int value)
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;
+	new_node->index = -1;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -66,8 +67,8 @@ static void	stack_sort(t_stack *stack)
 {
 	if (nb_node(stack->a) <= 5)
 		simple_sort(stack);
-	//else
-	//	radix_sort(stack);
+	else
+		radix_sort(stack);
 }
 
 int	main(int ac, char **av)

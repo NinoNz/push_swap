@@ -6,7 +6,7 @@
 #    By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/18 14:46:32 by alnzohab          #+#    #+#              #
-#    Updated: 2024/02/27 14:56:20 by alnzohab         ###   ########.fr        #
+#    Updated: 2024/03/06 16:08:59 by alnzohab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,14 @@ SRCS = push_start.c \
 	do_rra.c \
 	simple_sort.c \
 	sort_3.c \
+	sort_4_5.c \
+	found_pos.c \
 	nb_node.c \
+	found_min.c \
 	radix.c 
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
+
 
 LIBFT_PATH = libft
 LIBFT_LIB = ${LIBFT_PATH}/libft.a

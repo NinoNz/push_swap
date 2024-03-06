@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:08:09 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/27 16:08:12 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/03/05 19:13:07 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,3 @@ void	sb(t_stack *stack)
 	tmp->value = swap;
 	printf("sb\n");
 }  
-

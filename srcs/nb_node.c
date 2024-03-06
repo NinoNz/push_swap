@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:08:18 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/27 16:08:19 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:09:11 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t nb_node(t_node *stack_node)
 
     tmp = stack_node;
     i = 0;
-    while (tmp)
+    while (tmp != NULL)
     {
         i++;
         tmp = tmp->next;
