@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_4_5.c                                         :+:      :+:    :+:   */
+/*   set_index.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 16:19:22 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/22 15:29:44 by alnzohab         ###   ########.fr       */
+/*   Created: 2024/03/19 14:34:45 by alnzohab          #+#    #+#             */
+/*   Updated: 2024/03/22 15:36:41 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_4_5(t_stack *stack)
+void set_index(t_node *stack, int size)
 {
-
-	int repeat_nb;
-
-	repeat_nb = nb_node(stack->a) - 3;
-
-	while (repeat_nb != 0)
-	{
-		while (found_pos(stack->a, found_min(stack->a)) != 0)
-		{
-            if (found_pos(stack->a, found_min(stack->a)) <= 2)
-                ra(stack);
-            else
-                rra(stack);
-		}
-		pb(stack->a->value, stack);
-		repeat_nb--;
-	}
-    sort_3(stack);
-    while(nb_node(stack->b) != 0)
+  t_node *tmp;
+  int min;
+  int i;
+  
+  i = 0;
+  while (size--)
+  {
+    min = 2147483647; // max int
+    tmp = stack;
+    while (tmp)
     {
-        pa(stack->b->value, stack);
+        if (tmp->value < min && tmp->index == -1)
+            min = tmp->value;
+        tmp = tmp->next;
     }
+    tmp = stack;
+    while (tmp)
+    {
+        if (tmp->value == min && tmp->index == -1)
+            tmp->index = i++;
+        tmp = tmp->next;
+    }
+  }  
 }

@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:17:11 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/06 16:12:33 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/03/08 15:39:28 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,4 @@ void	simple_sort(t_stack *stack)
 		sort_3(stack);
 	else if (size == 4 || size == 5)
 		sort_4_5(stack);
-}
+} 

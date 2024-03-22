@@ -6,7 +6,7 @@
 #    By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/18 14:46:32 by alnzohab          #+#    #+#              #
-#    Updated: 2024/03/06 16:08:59 by alnzohab         ###   ########.fr        #
+#    Updated: 2024/03/22 17:12:22 by alnzohab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ SRCS = push_start.c \
 	found_pos.c \
 	nb_node.c \
 	found_min.c \
+	set_index.c \
+	ft_lstsize.c \
 	radix.c 
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
