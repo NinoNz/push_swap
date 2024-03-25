@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:07:10 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/22 17:15:16 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:53:17 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ void sa(t_stack *stack_a);
 void sb(t_stack *stack_b);
 void ra(t_stack *stack);
 void ss(t_stack *stack);
-void	pa(int data, t_stack *stack);
-void	pb(int data, t_stack *stack);
+//void	pa(int data, t_stack *stack);
+void	pa(int data, int index, t_stack *stack);
+//void	pb(int data, t_stack *stack);
+void	pb(int data, int index, t_stack *stack);
 void	rra(t_stack *stack_t);
 t_node	*malloc_new_node(int value);
 void simple_sort(t_stack *stack);

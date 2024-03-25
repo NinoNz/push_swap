@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_start.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/06 16:11:50 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:42:59 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,18 @@ t_node	*malloc_new_node(int value)
 	return (new_node);
 }
 
+static void print_node(t_stack *lst)
+{
+	t_stack *node;
+	
+	node = lst; 
+	while(node->a != NULL)
+	{
+		printf("%d", node->a->value);
+		printf(" ");
+		node->a = node->a->next;
+	}
+}
 t_stack	*fill_stack(char **av, t_stack *stack)
 {
 	t_node	*tmp;
@@ -65,6 +77,7 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 */
 static void	stack_sort(t_stack *stack)
 {
+	printf("test\n");
 	if (nb_node(stack->a) <= 5)
 		simple_sort(stack);
 	else
@@ -89,8 +102,7 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	stack_sort(stack);
-	//radix_sort(stack);
-	//ft_test_print(stack);
+	print_node(stack);
 	
 	return (0);
 }
