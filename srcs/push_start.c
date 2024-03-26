@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/25 16:42:59 by user             ###   ########.fr       */
+/*   Updated: 2024/03/25 18:56:31 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 		tmp = tmp->next;
 		i++;
 	}
+	set_index(stack->a,ft_lstsize(stack->a));
 	return (stack);
 }
 

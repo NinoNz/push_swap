@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:19:22 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/25 15:34:57 by user             ###   ########.fr       */
+/*   Updated: 2024/03/25 19:07:00 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sort_4_5(t_stack *stack)
             else
                 rra(stack);
 		}
-		pb(stack->a->value, stack->a->index, stack);
+		pb(stack->a->value, stack);
 		printf("======test1========\n");
 		repeat_nb--;
 	}

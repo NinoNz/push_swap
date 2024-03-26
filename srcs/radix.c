@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:40:06 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/25 16:41:42 by user             ###   ########.fr       */
+/*   Updated: 2024/03/26 18:02:45 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ void	radix_sort(t_stack *stack)
 			head_a = stack->a;
 			if (((head_a->index >> i) & 1) == 1)
 				ra(stack);
-			else
-				pb(stack->b->value, stack->b->index, stack);
+			else if (stack->b)
+				pb(stack->b->value, stack);
 		}
-		while (ft_lstsize(head_a) != 0)
+		while (stack->b && ft_lstsize(stack->b) != 0)
 			pa(stack->a->value, stack->a->index, stack);
 		i++;
 	}

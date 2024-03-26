@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:07:10 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/22 18:53:17 by user             ###   ########.fr       */
+/*   Updated: 2024/03/25 19:06:13 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void ss(t_stack *stack);
 //void	pa(int data, t_stack *stack);
 void	pa(int data, int index, t_stack *stack);
 //void	pb(int data, t_stack *stack);
-void	pb(int data, int index, t_stack *stack);
+void	pb(int data, t_stack *stack);
 void	rra(t_stack *stack_t);
 t_node	*malloc_new_node(int value);
 void simple_sort(t_stack *stack);
