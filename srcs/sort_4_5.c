@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_4_5.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:19:22 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/25 19:07:00 by user             ###   ########.fr       */
+/*   Updated: 2024/03/26 20:38:01 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sort_4_5(t_stack *stack)
             else
                 rra(stack);
 		}
-		pb(stack->a->value, stack);
+		pb(stack->a->value, stack->a->index ,stack);
 		printf("======test1========\n");
 		repeat_nb--;
 	}
