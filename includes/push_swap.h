@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:07:10 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/26 20:37:18 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:24:43 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #include "../libft/libft.h"
 #include <stdio.h>
+#include <stdbool.h> 
 
 typedef struct  s_node
 {
@@ -50,6 +51,9 @@ int found_min(t_node *linklist);
 void set_index(t_node *stack, int size);
 void	radix_sort(t_stack *stack);
 int	ft_lstsize(t_node *stack);
+bool	str_pars(char **arv);
+void	ft_freethood(t_stack *stack);
+
 
 
 #endif

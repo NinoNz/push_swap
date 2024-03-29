@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_start.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/25 18:56:31 by user             ###   ########.fr       */
+/*   Updated: 2024/03/29 15:02:39 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "push_swap.h"
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -29,17 +28,31 @@ t_node	*malloc_new_node(int value)
 	return (new_node);
 }
 
-static void print_node(t_stack *lst)
+static void	print_node(t_stack *lst)
 {
-	t_stack *node;
-	
-	node = lst; 
-	while(node->a != NULL)
+	t_stack	*node;
+
+	node = lst;
+	while (node->a != NULL)
 	{
-		printf("%d", node->a->value);
-		printf(" ");
+		printf("%d ", node->a->value);
 		node->a = node->a->next;
 	}
+	printf("\n");
+	// Restaurer la valeur originale de node->a
+	node->a = lst->a;
+}
+bool	is_duplicate(t_node *stack, int value)
+{
+	while (stack != NULL)
+	{
+		if (stack->value == value)
+		{
+			return (true); // La valeur existe déjà dans la pile
+		}
+		stack = stack->next;
+	}
+	return (false); // La valeur n'existe pas dans la pile
 }
 t_stack	*fill_stack(char **av, t_stack *stack)
 {
@@ -57,13 +70,18 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 	while (av[i] != NULL)
 	{
 		number = ft_atoi(av[i]);
+		if (is_duplicate(stack->a, number))
+		{
+			printf("Error: Duplicate value detected\n");
+			return (NULL);
+		}
 		tmp->next = malloc_new_node(number);
 		if (!tmp->next)
 			return (NULL);
 		tmp = tmp->next;
 		i++;
 	}
-	set_index(stack->a,ft_lstsize(stack->a));
+	set_index(stack->a, ft_lstsize(stack->a));
 	return (stack);
 }
 
@@ -89,21 +107,26 @@ int	main(int ac, char **av)
 {
 	t_stack	*stack;
 
+	if (ac < 2) // Vérification du nombre d'arguments
+		return (1);
 	stack = (t_stack *)malloc(1 * sizeof(t_stack));
-	
-	if (ac < 2) // nb argument
-	{ 
-		printf("Error: no argument given\n");
+	if (!stack) // Vérification de l'allocation de mémoire
+	{
+		printf("Error: memory allocation failed\n");
 		return (1);
 	}
+	if (str_pars(av) == false)
+		return (1);
 	stack = fill_stack(av, stack);
 	if (!stack)
 	{
 		printf("Error in fill_stack");
+		free(stack); // Libération de la mémoire allouée avant de quitter
 		return (1);
 	}
 	stack_sort(stack);
 	print_node(stack);
-	
+	ft_freethood(stack); 
+	free(stack); // Libération de la mémoire allouée avant de quitter
 	return (0);
 }

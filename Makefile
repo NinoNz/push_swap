@@ -6,14 +6,14 @@
 #    By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/18 14:46:32 by alnzohab          #+#    #+#              #
-#    Updated: 2024/03/22 17:12:22 by alnzohab         ###   ########.fr        #
+#    Updated: 2024/03/29 14:26:22 by alnzohab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address
 RM = rm -rf
 
 INC_DIR = includes
@@ -33,6 +33,8 @@ SRCS = push_start.c \
 	found_min.c \
 	set_index.c \
 	ft_lstsize.c \
+	str_pars.c \
+	freethehood.c \
 	radix.c 
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
