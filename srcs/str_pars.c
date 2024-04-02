@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 11:56:16 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 12:47:05 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 17:43:19 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ bool	ft_verif_char(char *str)
 		return (false);
 	while (str[i] != '\0')
 	{
-		// printf("%c, str\n", str[i]);
 		if ((str[i] >= 48 && str[i] <= 57) || str[i] == 45 || str[i] == 43)
 			i++;
 		else

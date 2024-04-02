@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:07:10 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 13:55:03 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 17:40:01 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <stdbool.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 typedef struct s_node
 {
@@ -35,10 +36,10 @@ void				sa(t_stack *stack_a);
 void				sb(t_stack *stack_b);
 void				ra(t_stack *stack);
 void				ss(t_stack *stack);
-void				pa(int data, int index, t_stack *stack);
-void				pb(int data, int index, t_stack *stack);
+void				pa(long data, int index, t_stack *stack);
+void				pb(long data, int index, t_stack *stack);
 void				rra(t_stack *stack_t);
-t_node				*malloc_new_node(int value);
+t_node				*malloc_new_node(long value);
 void				simple_sort(t_stack *stack);
 int					is_sorted(t_stack *stack);
 void				sort_3(t_stack *stack);
@@ -55,5 +56,5 @@ void				free_list(t_node *head);
 bool				is_duplicate(t_node *stack);
 bool				ft_is_space(char *str);
 long				ft_atol(const char *nptr);
-bool				ft_verif_min_max(t_node **stack);
+bool				ft_verif_min_max(t_node *stack);
 #endif

@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:34:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:32:18 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 17:20:41 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	set_index(t_node *stack, int size)
 {
 	t_node	*tmp;
-	int		min;
+	long	min;
 	int		i;
 
 	i = 0;

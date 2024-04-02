@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:07:43 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:34:29 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 17:47:08 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	delete_node_pa(t_stack *stack)
 	}
 }
 
-void	pa(int data, int index, t_stack *stack)
+void	pa(long data, int index, t_stack *stack)
 {
 	t_node	*tmp;
 	t_node	*new_node;
@@ -46,9 +46,8 @@ void	delete_node_pb(t_stack *stack)
 	stack->a = tmp->next;
 	free(tmp);
 }
-void	pb(int data, int index, t_stack *stack)
+void	pb(long data, int index, t_stack *stack)
 {
-	printf("===test2====\n");
 	t_node *tmp;
 	t_node *new_node;
 

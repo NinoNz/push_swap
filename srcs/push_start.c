@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:27:43 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 17:42:35 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-t_node	*malloc_new_node(int value)
+t_node	*malloc_new_node(long value)
 {
 	t_node	*new_node;
 
@@ -27,7 +27,7 @@ t_node	*malloc_new_node(int value)
 	new_node->next = NULL;
 	return (new_node);
 }
-
+/*
 static void	print_node(t_stack *lst)
 {
 	t_stack	*node;
@@ -42,6 +42,7 @@ static void	print_node(t_stack *lst)
 	// Restaurer la valeur originale de node->a
 	node->a = lst->a;
 }
+*/
 
 bool	is_duplicate(t_node *stack)
 {
@@ -64,9 +65,9 @@ bool	is_duplicate(t_node *stack)
 }
 t_stack	*fill_stack(char **av, t_stack *stack)
 {
-	t_node	*tmp;
-	int		number;
-	int		i;
+	t_node		*tmp;
+	long	number;
+	int			i;
 
 	// Do parsing/protection error in loop?
 	stack->a = malloc_new_node(ft_atol(av[1]));
@@ -90,7 +91,6 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 
 static void	stack_sort(t_stack *stack)
 {
-	printf("test\n");
 	if (nb_node(stack->a) <= 5)
 		simple_sort(stack);
 	else
@@ -111,12 +111,12 @@ int	main(int ac, char **av)
 	stack = fill_stack(av, stack);
 	if (!stack)
 		return (free(stack), printf("error2\n"), EXIT_FAILURE);
-	if (ft_verif_min_max(&stack->a) == true)
+	if (ft_verif_min_max(stack->a) == true)
 		return (ft_freethood(stack), printf("error3\n"), EXIT_FAILURE);
 	if (is_duplicate(stack->a))
 		return (ft_freethood(stack), printf("error4"), EXIT_FAILURE);
 	stack_sort(stack);
-	print_node(stack);
+	//print_node(stack);
 	ft_freethood(stack);
 	return (0);
 }

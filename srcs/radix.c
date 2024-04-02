@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:40:06 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:29:19 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 17:43:09 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static int	get_max_bits(t_stack *stack)
 			max = head->index;
 		head = head->next;
 	}
-	printf("====Test5=====\n");
 	while ((max >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);

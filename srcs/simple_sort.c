@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:17:11 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:31:49 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 17:47:18 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	is_sorted(t_stack *stack)
 
 void	simple_sort(t_stack *stack)
 {
-	printf("test2\n");
 	size_t size;
 
 	if (is_sorted(stack) || nb_node(stack->a) == 0 || nb_node(stack->a) == 1)

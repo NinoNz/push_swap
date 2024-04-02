@@ -6,13 +6,13 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 12:51:35 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:33:05 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 17:31:57 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-long	ft_atol(const char *nptr)
+long int	ft_atol(const char *nptr)
 {
 	long	i;
 	long	number;
