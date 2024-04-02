@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:07:43 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 17:47:08 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:17:07 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	delete_node_pa(t_stack *stack)
 {
 	t_node	*tmp;
 
-	if (stack->b) // Vérification si stack->b est non nul
+	if (stack->b)
 	{
 		tmp = stack->b;
 		stack->b = tmp->next;
@@ -46,10 +46,11 @@ void	delete_node_pb(t_stack *stack)
 	stack->a = tmp->next;
 	free(tmp);
 }
+
 void	pb(long data, int index, t_stack *stack)
 {
-	t_node *tmp;
-	t_node *new_node;
+	t_node	*tmp;
+	t_node	*new_node;
 
 	tmp = stack->b;
 	new_node = malloc_new_node(data);

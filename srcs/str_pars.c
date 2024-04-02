@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 11:56:16 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 17:43:19 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:02:32 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ bool	ft_is_space(char *str)
 	}
 	return (false);
 }
-bool	ft_verif_char(char *str)
 
+bool	ft_verif_char(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)

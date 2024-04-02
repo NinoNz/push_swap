@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:07:57 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 12:09:00 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:15:27 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,11 @@ void	ra(t_stack *stack_t)
 		return ;
 	first = stack_t->a;
 	current2 = first->next;
-	// Trouver le dernier élément de la pile.
 	last = stack_t->a;
 	while (last->next != NULL)
 	{
 		last = last->next;
 	}
-	// Décaler tous les éléments 1d'une position vers le haut.
 	stack_t->a = current2;
 	last->next = first;
 	first->next = NULL;
@@ -45,13 +43,11 @@ void	rb(t_stack *stack_t)
 		return ;
 	first = stack_t->b;
 	current2 = first->next;
-	// Trouver le dernier élément de la pile.
 	last = stack_t->b;
 	while (last->next != NULL)
 	{
 		last = last->next;
 	}
-	// Décaler tous les éléments 1d'une position vers le haut.
 	stack_t->b = current2;
 	last->next = first;
 	first->next = NULL;

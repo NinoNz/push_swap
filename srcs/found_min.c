@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 13:57:51 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:33:41 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:14:45 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	found_min(t_node *linklist)
 {
-	t_node *head;
-	int min;
+	t_node	*head;
+	int		min;
 
-	head = linklist; // peux etre a ou b.
+	head = linklist;
 	min = head->value;
 	while (head != NULL)
 	{

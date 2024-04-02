@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 13:00:04 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 17:42:54 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:11:29 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool	ft_verif_min_max(t_node *stack)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	tmp = stack;
 	while (tmp != NULL)

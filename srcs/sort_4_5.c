@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:19:22 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 17:09:39 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:02:49 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	sort_4_5(t_stack *stack)
 		repeat_nb--;
 	}
 	sort_3(stack);
-	// Libérer la mémoire allouée dynamiquement pour stack->a
-	// Réinitialiser stack->a à NULL pour indiquer qu'il est vide
 	while (nb_node(stack->b) != 0)
 	{
 		pa(stack->b->value, stack->a->index, stack);

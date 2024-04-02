@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:34:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 17:20:41 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:07:42 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	set_index(t_node *stack, int size)
 	i = 0;
 	while (size--)
 	{
-		min = 2147483647; // max int
+		min = 2147483647;
 		tmp = stack;
 		while (tmp)
 		{
