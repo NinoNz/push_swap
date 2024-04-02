@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 18:10:31 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:56:48 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	main(int ac, char **av)
 	if (!stack)
 		return (printf("error0"), EXIT_FAILURE);
 	if (str_pars(av) == false)
-		return (ft_freethood(stack), printf("error1\n"), EXIT_FAILURE);
+		return (free(stack), printf("error1\n"), EXIT_FAILURE);
 	stack = fill_stack(av, stack);
 	if (!stack)
 		return (free(stack), printf("error2\n"), EXIT_FAILURE);
