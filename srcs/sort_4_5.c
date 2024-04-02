@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:19:22 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/26 20:38:01 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 14:31:24 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 void	sort_4_5(t_stack *stack)
 {
-	int repeat_nb;
+	int	repeat_nb;
 
 	repeat_nb = nb_node(stack->a) - 3;
-
 	while (repeat_nb != 0)
 	{
 		while (found_pos(stack->a, found_min(stack->a)) != 0)
 		{
-            if (found_pos(stack->a, found_min(stack->a)) <= 2)
-                ra(stack);
-            else
-                rra(stack);
+			if (found_pos(stack->a, found_min(stack->a)) <= 2)
+				ra(stack);
+			else
+				rra(stack);
 		}
-		pb(stack->a->value, stack->a->index ,stack);
-		printf("======test1========\n");
+		pb(stack->a->value, stack->a->index, stack);
 		repeat_nb--;
 	}
-    sort_3(stack);
-    while(nb_node(stack->b) != 0)
-    {
-        pa(stack->b->value, stack->a->index, stack);
-    }
+	sort_3(stack);
+	// Libérer la mémoire allouée dynamiquement pour stack->a
+	free_list(stack->a);
+	// Réinitialiser stack->a à NULL pour indiquer qu'il est vide
+	stack->a = NULL;
+	while (nb_node(stack->b) != 0)
+	{
+		pa(stack->b->value, stack->a->index, stack);
+	}
 }

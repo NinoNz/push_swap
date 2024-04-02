@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:42:41 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/22 16:55:16 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 14:32:55 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 // Returns the size of the Linked List
 int	ft_lstsize(t_node *stack)
 {
-	size_t i;
-	t_node *tmp;
+	size_t	i;
+	t_node	*tmp;
 
 	tmp = stack;
 	i = 0;

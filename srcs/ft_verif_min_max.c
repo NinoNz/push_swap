@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_index.c                                        :+:      :+:    :+:   */
+/*   ft_verif_min_max.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 14:34:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:32:18 by alnzohab         ###   ########.fr       */
+/*   Created: 2024/04/02 13:00:04 by alnzohab          #+#    #+#             */
+/*   Updated: 2024/04/02 14:19:31 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	set_index(t_node *stack, int size)
+bool	ft_verif_min_max(t_node **stack)
 {
-	t_node	*tmp;
-	int		min;
-	int		i;
+	long i;
+	t_node *tmp;
 
+	tmp = *stack;
 	i = 0;
-	while (size--)
+	while (tmp != NULL)
 	{
-		min = 2147483647; // max int
-		tmp = stack;
-		while (tmp)
-		{
-			if (tmp->value < min && tmp->index == -1)
-				min = tmp->value;
-			tmp = tmp->next;
-		}
-		tmp = stack;
-		while (tmp)
-		{
-			if (tmp->value == min && tmp->index == -1)
-				tmp->index = i++;
-			tmp = tmp->next;
-		}
+		if (tmp->value >= INT_MAX || tmp->value <= INT_MIN)
+			return (true);
+		tmp = tmp->next;
 	}
+	return (false);
 }

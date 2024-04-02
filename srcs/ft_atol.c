@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_index.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 14:34:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:32:18 by alnzohab         ###   ########.fr       */
+/*   Created: 2024/04/02 12:51:35 by alnzohab          #+#    #+#             */
+/*   Updated: 2024/04/02 14:33:05 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	set_index(t_node *stack, int size)
+long	ft_atol(const char *nptr)
 {
-	t_node	*tmp;
-	int		min;
-	int		i;
+	long	i;
+	long	number;
+	long	switchh;
 
 	i = 0;
-	while (size--)
+	number = 0;
+	switchh = 1;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-')
 	{
-		min = 2147483647; // max int
-		tmp = stack;
-		while (tmp)
-		{
-			if (tmp->value < min && tmp->index == -1)
-				min = tmp->value;
-			tmp = tmp->next;
-		}
-		tmp = stack;
-		while (tmp)
-		{
-			if (tmp->value == min && tmp->index == -1)
-				tmp->index = i++;
-			tmp = tmp->next;
-		}
+		switchh *= -1;
+		i++;
 	}
+	else if (nptr[i] == '+')
+		i++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		number *= 10;
+		number += (nptr[i] - 48);
+		i++;
+	}
+	return (number * switchh);
 }

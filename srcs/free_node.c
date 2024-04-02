@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_index.c                                        :+:      :+:    :+:   */
+/*   free_node.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 14:34:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 14:32:18 by alnzohab         ###   ########.fr       */
+/*   Created: 2024/04/02 08:38:27 by alnzohab          #+#    #+#             */
+/*   Updated: 2024/04/02 11:40:24 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	set_index(t_node *stack, int size)
+void	free_node(t_node *node)
 {
-	t_node	*tmp;
-	int		min;
-	int		i;
-
-	i = 0;
-	while (size--)
+	if (node != NULL)
 	{
-		min = 2147483647; // max int
-		tmp = stack;
-		while (tmp)
-		{
-			if (tmp->value < min && tmp->index == -1)
-				min = tmp->value;
-			tmp = tmp->next;
-		}
-		tmp = stack;
-		while (tmp)
-		{
-			if (tmp->value == min && tmp->index == -1)
-				tmp->index = i++;
-			tmp = tmp->next;
-		}
+		free(node);
+	}
+}
+
+void	free_list(t_node *head)
+{
+	t_node	*current;
+	t_node	*next;
+
+	current = head;
+	while (current != NULL)
+	{
+		next = current->next;
+		free_node(current);
+		current = next;
 	}
 }

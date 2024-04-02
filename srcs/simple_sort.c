@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:17:11 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/22 19:02:50 by user             ###   ########.fr       */
+/*   Updated: 2024/04/02 14:31:49 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,4 @@ void	simple_sort(t_stack *stack)
 		sort_3(stack);
 	else if (size == 4 || size == 5)
 		sort_4_5(stack);
-} 
+}

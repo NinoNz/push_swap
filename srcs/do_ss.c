@@ -6,15 +6,14 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:08:04 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/02/27 16:08:06 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 14:33:59 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/push_swap.h"
 
-void ss(t_stack *stack)
+void	ss(t_stack *stack)
 {
-    sa(stack);
-    sb(stack);
+	sa(stack);
+	sb(stack);
 }

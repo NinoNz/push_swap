@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/29 15:02:39 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 14:27:43 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_node	*malloc_new_node(int value)
 {
 	t_node	*new_node;
 
-	new_node = (t_node *)malloc(sizeof(t_node));
+	new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;
@@ -35,24 +35,32 @@ static void	print_node(t_stack *lst)
 	node = lst;
 	while (node->a != NULL)
 	{
-		printf("%d ", node->a->value);
+		printf("%ld ", node->a->value);
 		node->a = node->a->next;
 	}
 	printf("\n");
 	// Restaurer la valeur originale de node->a
 	node->a = lst->a;
 }
-bool	is_duplicate(t_node *stack, int value)
+
+bool	is_duplicate(t_node *stack)
 {
-	while (stack != NULL)
+	t_node	*tmp;
+	t_node	*current;
+
+	tmp = stack;
+	while (tmp != NULL)
 	{
-		if (stack->value == value)
+		current = tmp->next;
+		while (current != NULL)
 		{
-			return (true); // La valeur existe déjà dans la pile
+			if (tmp->value == current->value)
+				return (true); // La valeur existe déjà dans la pile
+			current = current->next;
 		}
-		stack = stack->next;
+		tmp = tmp->next;
 	}
-	return (false); // La valeur n'existe pas dans la pile
+	return (false);
 }
 t_stack	*fill_stack(char **av, t_stack *stack)
 {
@@ -61,7 +69,7 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 	int		i;
 
 	// Do parsing/protection error in loop?
-	stack->a = malloc_new_node(ft_atoi(av[1]));
+	stack->a = malloc_new_node(ft_atol(av[1]));
 	if (!stack->a)
 		return (NULL);
 	stack->b = NULL;
@@ -69,12 +77,7 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 	i = 2;
 	while (av[i] != NULL)
 	{
-		number = ft_atoi(av[i]);
-		if (is_duplicate(stack->a, number))
-		{
-			printf("Error: Duplicate value detected\n");
-			return (NULL);
-		}
+		number = ft_atol(av[i]);
 		tmp->next = malloc_new_node(number);
 		if (!tmp->next)
 			return (NULL);
@@ -85,15 +88,6 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 	return (stack);
 }
 
-/*void	ft_test_print(t_stack *stack)
-{
-	ra(stack);
-	sa(stack);
-	pb(stack->a->value, stack);
-	pa(stack->b->value,stack);
-	rra(stack);
-}
-*/
 static void	stack_sort(t_stack *stack)
 {
 	printf("test\n");
@@ -111,22 +105,18 @@ int	main(int ac, char **av)
 		return (1);
 	stack = (t_stack *)malloc(1 * sizeof(t_stack));
 	if (!stack) // Vérification de l'allocation de mémoire
-	{
-		printf("Error: memory allocation failed\n");
-		return (1);
-	}
+		return (printf("error0"), EXIT_FAILURE);
 	if (str_pars(av) == false)
-		return (1);
+		return (ft_freethood(stack), printf("error1\n"), EXIT_FAILURE);
 	stack = fill_stack(av, stack);
 	if (!stack)
-	{
-		printf("Error in fill_stack");
-		free(stack); // Libération de la mémoire allouée avant de quitter
-		return (1);
-	}
+		return (free(stack), printf("error2\n"), EXIT_FAILURE);
+	if (ft_verif_min_max(&stack->a) == true)
+		return (ft_freethood(stack), printf("error3\n"), EXIT_FAILURE);
+	if (is_duplicate(stack->a))
+		return (ft_freethood(stack), printf("error4"), EXIT_FAILURE);
 	stack_sort(stack);
 	print_node(stack);
-	ft_freethood(stack); 
-	free(stack); // Libération de la mémoire allouée avant de quitter
+	ft_freethood(stack);
 	return (0);
 }

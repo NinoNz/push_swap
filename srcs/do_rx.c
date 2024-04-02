@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:07:57 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/03/05 18:15:15 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 12:09:00 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ra(t_stack *stack_t)
 	// Trouver le dernier élément de la pile.
 	last = stack_t->a;
 	while (last->next != NULL)
-	
 	{
 		last = last->next;
 	}
@@ -58,10 +57,3 @@ void	rb(t_stack *stack_t)
 	first->next = NULL;
 	printf("ra\n");
 }
-
-/* void ra(t_stack *stack_a){
-    // Appeler la fonction utilitaire pour effectuer la rotation à droite.
-    do_rotate(stack_a);
-    ft_putstr_fd("ra\n", 1);
-}
-*/
