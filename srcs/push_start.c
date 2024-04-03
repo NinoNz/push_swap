@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 21:05:59 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:58:38 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,13 @@ t_stack	*fill_stack(char **av, t_stack *stack)
 
 static void	stack_sort(t_stack *stack)
 {
-	if (nb_node(stack->a) <= 5)
+	if (nb_node(stack->a) <= 5) {
 		simple_sort(stack);
-	else
+	} else if (is_sorted(stack)) {
+		return ;
+	} else {
 		radix_sort(stack);
+	}
 }
 
 int	main(int ac, char **av)
