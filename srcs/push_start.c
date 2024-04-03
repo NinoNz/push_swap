@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:45 by alnzohab          #+#    #+#             */
-/*   Updated: 2024/04/02 18:56:48 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 21:05:59 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ bool	is_duplicate(t_node *stack)
 
 t_stack	*fill_stack(char **av, t_stack *stack)
 {
-	t_node		*tmp;
-	long		number;
-	int			i;
+	t_node	*tmp;
+	long	number;
+	int		i;
 
 	stack->a = malloc_new_node(ft_atol(av[1]));
 	if (!stack->a)
@@ -89,16 +89,16 @@ int	main(int ac, char **av)
 		return (1);
 	stack = (t_stack *)malloc(1 * sizeof(t_stack));
 	if (!stack)
-		return (printf("error0"), EXIT_FAILURE);
+		return (ft_putendl_fd("Error", 2), EXIT_FAILURE);
 	if (str_pars(av) == false)
-		return (free(stack), printf("error1\n"), EXIT_FAILURE);
+		return (free(stack), ft_putendl_fd("Error", 2), EXIT_FAILURE);
 	stack = fill_stack(av, stack);
 	if (!stack)
-		return (free(stack), printf("error2\n"), EXIT_FAILURE);
+		return (free(stack), ft_putendl_fd("Error", 2), EXIT_FAILURE);
 	if (ft_verif_min_max(stack->a) == true)
-		return (ft_freethood(stack), printf("error3\n"), EXIT_FAILURE);
+		return (ft_freethood(stack), ft_putendl_fd("Error", 2), EXIT_FAILURE);
 	if (is_duplicate(stack->a))
-		return (ft_freethood(stack), printf("error4"), EXIT_FAILURE);
+		return (ft_freethood(stack), ft_putendl_fd("Error", 2), EXIT_FAILURE);
 	stack_sort(stack);
 	ft_freethood(stack);
 	return (0);

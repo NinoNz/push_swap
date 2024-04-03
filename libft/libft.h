@@ -6,7 +6,7 @@
 /*   By: alnzohab <alnzohab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:09:51 by alnzohab          #+#    #+#             */
-/*   Updated: 2023/03/14 10:15:18 by alnzohab         ###   ########.fr       */
+/*   Updated: 2024/04/02 20:56:47 by alnzohab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_itoa(int n);
+void	ft_putendl_fd(char *s, int fd);
 
 #endif
